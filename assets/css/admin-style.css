@@ -1,0 +1,771 @@
+/**
+ * Premium Admin Stylesheet for GitHub to WP Sync & Auto-Updater
+ */
+
+/* Main Wrapper Settings */
+.gh-wp-updater-wrapper {
+	font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+	margin: 20px 20px 0 0;
+	color: #1e293b;
+	box-sizing: border-box;
+}
+
+.gh-wp-updater-wrapper * {
+	box-sizing: border-box;
+}
+
+/* Header Area */
+.gh-wp-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+	padding: 24px 32px;
+	border-radius: 16px;
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+	margin-bottom: 30px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gh-wp-title-area {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.gh-wp-logo {
+	background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+	width: 56px;
+	height: 56px;
+	border-radius: 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+	box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+.gh-wp-logo span.dashicons {
+	font-size: 28px;
+	width: 28px;
+	height: 28px;
+	animation: gh-spin 12s linear infinite;
+}
+
+.gh-wp-title-area h1 {
+	color: #ffffff !important;
+	font-size: 26px !important;
+	font-weight: 700 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	letter-spacing: -0.5px;
+	line-height: 1.2;
+}
+
+.gh-wp-title-area p.description {
+	color: #94a3b8 !important;
+	font-size: 14px !important;
+	margin: 4px 0 0 0 !important;
+}
+
+/* Primary Layout Grid */
+.gh-wp-layout {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 30px;
+}
+
+@media (max-width: 1200px) {
+	.gh-wp-layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Card Styling */
+.gh-wp-main-content, .gh-wp-sidebar {
+	background: #ffffff;
+	border-radius: 16px;
+	border: 1px solid #e2e8f0;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+	padding: 24px;
+}
+
+.gh-wp-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #f1f5f9;
+	padding-bottom: 16px;
+	margin-bottom: 20px;
+}
+
+.gh-wp-card-header h2 {
+	font-size: 18px !important;
+	font-weight: 600 !important;
+	margin: 0 !important;
+	color: #0f172a !important;
+}
+
+/* Repository Card Grid */
+.gh-wp-repos-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+@media (max-width: 782px) {
+	.gh-wp-repos-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.gh-wp-repo-card {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+.gh-wp-repo-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.08);
+	border-color: #cbd5e1;
+}
+
+/* Card Badges and Types */
+.gh-wp-repo-card-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 12px;
+}
+
+.gh-wp-repo-identity {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.gh-wp-repo-icon {
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+}
+
+.gh-wp-repo-card.type-plugin .gh-wp-repo-icon {
+	background-color: #e0e7ff;
+	color: #4f46e5;
+}
+
+.gh-wp-repo-card.type-theme .gh-wp-repo-icon {
+	background-color: #f3e8ff;
+	color: #9333ea;
+}
+
+.gh-wp-repo-details h4 {
+	margin: 0 !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #0f172a !important;
+	line-height: 1.3;
+}
+
+.gh-wp-repo-details span.repo-meta {
+	font-size: 12px;
+	color: #64748b;
+	display: block;
+	margin-top: 2px;
+}
+
+.gh-wp-badge {
+	font-size: 11px;
+	font-weight: 600;
+	padding: 4px 8px;
+	border-radius: 9999px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.gh-wp-badge-plugin {
+	background-color: #e0e7ff;
+	color: #3730a3;
+}
+
+.gh-wp-badge-theme {
+	background-color: #f3e8ff;
+	color: #6b21a8;
+}
+
+.gh-wp-repo-card-middle {
+	margin-bottom: 20px;
+	font-size: 13px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.gh-wp-info-row {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	background: #ffffff;
+	padding: 8px 12px;
+	border-radius: 8px;
+	border: 1px dashed #e2e8f0;
+}
+
+.gh-wp-info-row label {
+	font-size: 11px;
+	font-weight: 500;
+	color: #94a3b8;
+	text-transform: uppercase;
+}
+
+.gh-wp-copy-field {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+}
+
+.gh-wp-copy-field code {
+	font-family: monospace;
+	font-size: 11px;
+	background: none !important;
+	padding: 0 !important;
+	color: #0f172a;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 80%;
+}
+
+.gh-wp-btn-copy {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #94a3b8;
+	padding: 2px;
+	border-radius: 4px;
+	transition: all 0.2s;
+	display: flex;
+	align-items: center;
+}
+
+.gh-wp-btn-copy:hover {
+	color: #4f46e5;
+	background: #f1f5f9;
+}
+
+.gh-wp-btn-copy.copied {
+	color: #10b981 !important;
+}
+
+/* Repository Card Bottom / Actions */
+.gh-wp-repo-card-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #f1f5f9;
+	padding-top: 14px;
+	margin-top: auto;
+}
+
+.gh-wp-card-actions {
+	display: flex;
+	gap: 8px;
+}
+
+/* Custom Buttons Styling */
+.gh-wp-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 500;
+	padding: 8px 16px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	border: 1px solid transparent;
+	gap: 6px;
+	outline: none;
+}
+
+.gh-wp-btn-primary {
+	background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+	color: #ffffff;
+	box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
+}
+
+.gh-wp-btn-primary:hover {
+	background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+	transform: translateY(-1px);
+	box-shadow: 0 6px 14px rgba(79, 70, 229, 0.35);
+	color: #ffffff;
+}
+
+.gh-wp-btn-primary:active {
+	transform: translateY(0);
+}
+
+.gh-wp-btn-secondary {
+	background: #ffffff;
+	color: #475569;
+	border-color: #cbd5e1;
+}
+
+.gh-wp-btn-secondary:hover {
+	background: #f8fafc;
+	border-color: #94a3b8;
+	color: #1e293b;
+}
+
+.gh-wp-btn-icon {
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #64748b;
+	background: #ffffff;
+	border: 1px solid #cbd5e1;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+.gh-wp-btn-icon:hover {
+	color: #1e293b;
+	border-color: #94a3b8;
+	background: #f8fafc;
+}
+
+.gh-wp-btn-icon.btn-sync:hover {
+	color: #4f46e5;
+	border-color: #c7d2fe;
+	background: #e0e7ff;
+}
+
+.gh-wp-btn-icon.btn-delete:hover {
+	color: #ef4444;
+	border-color: #fecaca;
+	background: #fee2e2;
+}
+
+.gh-wp-btn-text {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #64748b;
+	font-size: 13px;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	transition: all 0.2s;
+	padding: 4px 8px;
+	border-radius: 6px;
+}
+
+.gh-wp-btn-text:hover {
+	color: #ef4444;
+	background: #fee2e2;
+}
+
+/* Empty State */
+.gh-wp-empty-state {
+	grid-column: span 2;
+	text-align: center;
+	padding: 60px 40px;
+	background: #f8fafc;
+	border: 2px dashed #cbd5e1;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.gh-wp-empty-state span.dashicons-cloud {
+	font-size: 48px;
+	width: 48px;
+	height: 48px;
+	color: #94a3b8;
+	margin-bottom: 12px;
+}
+
+.gh-wp-empty-state h3 {
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	margin: 0 0 6px 0 !important;
+	color: #334155 !important;
+}
+
+.gh-wp-empty-state p {
+	font-size: 13px;
+	color: #64748b;
+	margin: 0 0 20px 0;
+	max-width: 320px;
+}
+
+/* Timeline/Log History styling */
+.gh-wp-logs-timeline {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	max-height: 520px;
+	overflow-y: auto;
+	padding-right: 4px;
+}
+
+.gh-wp-logs-timeline::-webkit-scrollbar {
+	width: 6px;
+}
+
+.gh-wp-logs-timeline::-webkit-scrollbar-thumb {
+	background-color: #cbd5e1;
+	border-radius: 3px;
+}
+
+.gh-wp-log-item {
+	display: flex;
+	gap: 14px;
+	position: relative;
+	padding-bottom: 4px;
+}
+
+.gh-wp-log-item:not(:last-child)::after {
+	content: '';
+	position: absolute;
+	left: 11px;
+	top: 24px;
+	bottom: -16px;
+	width: 2px;
+	background: #e2e8f0;
+}
+
+.gh-wp-log-status-dot {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	flex-shrink: 0;
+}
+
+.gh-wp-log-item.status-success .gh-wp-log-status-dot {
+	background-color: #d1fae5;
+	color: #059669;
+}
+
+.gh-wp-log-item.status-failed .gh-wp-log-status-dot {
+	background-color: #fee2e2;
+	color: #dc2626;
+}
+
+.gh-wp-log-status-dot span.dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gh-wp-log-info {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 10px;
+	padding: 12px;
+	flex-grow: 1;
+	font-size: 13px;
+	position: relative;
+}
+
+.gh-wp-log-info::before {
+	content: '';
+	position: absolute;
+	left: -6px;
+	top: 9px;
+	width: 10px;
+	height: 10px;
+	background: #f8fafc;
+	border-left: 1px solid #e2e8f0;
+	border-bottom: 1px solid #e2e8f0;
+	transform: rotate(45deg);
+}
+
+.gh-wp-log-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-bottom: 6px;
+}
+
+.gh-wp-log-repo {
+	font-weight: 600;
+	color: #0f172a;
+}
+
+.gh-wp-log-time {
+	font-size: 11px;
+	color: #94a3b8;
+}
+
+.gh-wp-log-commit-msg {
+	color: #475569;
+	line-height: 1.4;
+	margin-bottom: 6px;
+	font-weight: 400;
+}
+
+.gh-wp-log-meta {
+	display: flex;
+	gap: 12px;
+	font-size: 11px;
+	color: #64748b;
+}
+
+.gh-wp-log-meta span {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.gh-wp-log-error-banner {
+	background: #fef2f2;
+	border: 1px solid #fee2e2;
+	color: #b91c1c;
+	border-radius: 6px;
+	padding: 8px 10px;
+	font-size: 11px;
+	margin-top: 8px;
+	word-break: break-all;
+	font-family: monospace;
+}
+
+.gh-wp-logs-empty {
+	text-align: center;
+	color: #94a3b8;
+	padding: 40px 20px;
+	font-size: 13px;
+}
+
+/* Loading Animations */
+.gh-wp-btn-icon.syncing span.dashicons {
+	animation: gh-spin 1.5s linear infinite;
+}
+
+.gh-wp-btn-icon.syncing {
+	pointer-events: none;
+	opacity: 0.6;
+}
+
+@keyframes gh-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+/* Modern Modals */
+.gh-wp-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gh-wp-modal.open {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.gh-wp-modal-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(15, 23, 42, 0.6);
+	backdrop-filter: blur(4px);
+}
+
+.gh-wp-modal-container {
+	background: #ffffff;
+	border-radius: 16px;
+	max-width: 520px;
+	width: 100%;
+	z-index: 2;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	transform: translateY(20px);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	border: 1px solid #e2e8f0;
+	overflow: hidden;
+}
+
+.gh-wp-modal.open .gh-wp-modal-container {
+	transform: translateY(0);
+}
+
+.gh-wp-modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 24px;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.gh-wp-modal-header h3 {
+	font-size: 18px !important;
+	font-weight: 600 !important;
+	margin: 0 !important;
+	color: #0f172a !important;
+}
+
+.gh-wp-modal-close {
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+	color: #94a3b8;
+	transition: color 0.2s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+}
+
+.gh-wp-modal-close:hover {
+	color: #1e293b;
+	background: #f1f5f9;
+}
+
+.gh-wp-modal-container form {
+	padding: 24px;
+	margin: 0;
+}
+
+/* Forms Styling */
+.gh-wp-form-group {
+	margin-bottom: 18px;
+}
+
+.gh-wp-form-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+}
+
+.gh-wp-form-group label {
+	display: block;
+	font-size: 13px;
+	font-weight: 500;
+	color: #334155;
+	margin-bottom: 6px;
+}
+
+.gh-wp-form-group label span.required {
+	color: #ef4444;
+}
+
+.gh-wp-form-group input[type="text"],
+.gh-wp-form-group input[type="password"],
+.gh-wp-form-group select {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #cbd5e1;
+	border-radius: 8px;
+	padding: 8px 12px;
+	font-family: inherit;
+	font-size: 13px;
+	color: #1e293b;
+	background-color: #ffffff;
+	transition: all 0.2s;
+	outline: none;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.gh-wp-form-group input[type="text"]:focus,
+.gh-wp-form-group input[type="password"]:focus,
+.gh-wp-form-group select:focus {
+	border-color: #4f46e5;
+	box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.gh-wp-help-text {
+	font-size: 11px;
+	color: #64748b;
+	margin: 4px 0 0 0;
+	line-height: 1.4;
+}
+
+.gh-wp-modal-footer {
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+	border-top: 1px solid #f1f5f9;
+	margin-top: 24px;
+	padding-top: 16px;
+}
+
+/* Toast Notification Styles */
+.gh-wp-toast {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	z-index: 100001;
+	background: #0f172a;
+	color: #ffffff;
+	padding: 12px 20px;
+	border-radius: 10px;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+	font-size: 13px;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	transform: translateY(100px);
+	opacity: 0;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gh-wp-toast.show {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.gh-wp-toast.toast-success {
+	background: #064e3b;
+	color: #a7f3d0;
+	border-color: #047857;
+}
+
+.gh-wp-toast.toast-error {
+	background: #7f1d1d;
+	color: #fca5a5;
+	border-color: #b91c1c;
+}
