@@ -1,6 +1,6 @@
 # GitHub to WP Deployer & Auto-Updater
 
-A secure, premium WordPress plugin that automates the installation, synchronization, and updates of plugins and themes directly from public and private GitHub repositories using secure Webhooks.
+A secure, premium WordPress plugin that automates the installation, synchronization, and updates of plugins and themes directly from public and private GitHub repositories using secure Webhooks. Built specifically for plugin & theme developers to test and troubleshoot to hosted staging WordPress sites easier.
 
 ---
 
