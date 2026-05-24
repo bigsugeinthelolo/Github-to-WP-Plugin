@@ -16,8 +16,38 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Define Constants
 define( 'GH_WP_UPDATER_VERSION', '1.0.0' );
-define( 'GH_WP_UPDATER_PATH', plugin_dir_path( __FILE__ ) );
-define( 'GH_WP_UPDATER_URL', plugin_dir_url( __FILE__ ) );
+
+// Support running as a mu-plugin where the main bootstrap file is placed directly
+// in wp-content/mu-plugins/ and the rest of the plugin files reside in a subdirectory.
+$gh_wp_updater_base_path = plugin_dir_path( __FILE__ );
+$gh_wp_updater_base_url  = plugin_dir_url( __FILE__ );
+
+if ( ! file_exists( $gh_wp_updater_base_path . 'includes/class-helper.php' ) ) {
+	if ( file_exists( $gh_wp_updater_base_path . 'Github-to-WP-Plugin/includes/class-helper.php' ) ) {
+		$gh_wp_updater_base_path .= 'Github-to-WP-Plugin/';
+		$gh_wp_updater_base_url  .= 'Github-to-WP-Plugin/';
+	} elseif ( file_exists( $gh_wp_updater_base_path . 'github-to-wp-updater/includes/class-helper.php' ) ) {
+		$gh_wp_updater_base_path .= 'github-to-wp-updater/';
+		$gh_wp_updater_base_url  .= 'github-to-wp-updater/';
+	}
+}
+
+// Verify that the files exist before proceeding to load them
+if ( ! file_exists( $gh_wp_updater_base_path . 'includes/class-helper.php' ) ) {
+	// Files are missing. Avoid Fatal Error / Critical Site Error.
+	// Hook into admin notices to inform the administrator if we are in admin.
+	if ( is_admin() ) {
+		add_action( 'admin_notices', function() {
+			echo '<div class="notice notice-error"><p>';
+			echo esc_html__( 'GitHub to WP Deployer & Auto-Updater error: The core plugin files are missing. Please ensure the "includes" and "assets" directories are placed in the same folder as the plugin loader.', 'github-to-wp-updater' );
+			echo '</p></div>';
+		} );
+	}
+	return;
+}
+
+define( 'GH_WP_UPDATER_PATH', $gh_wp_updater_base_path );
+define( 'GH_WP_UPDATER_URL', $gh_wp_updater_base_url );
 define( 'GH_WP_UPDATER_BASENAME', plugin_basename( __FILE__ ) );
 
 // Include required classes
